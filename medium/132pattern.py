@@ -23,6 +23,7 @@ Explanation: There are three 132 patterns in the sequence: [-1, 3, 2], [-1, 3, 0
 """
 
 from collections import deque
+
 class Solution:
   def find132pattern(self, nums) -> bool:
     length = len(nums)
