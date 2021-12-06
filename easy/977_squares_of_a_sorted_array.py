@@ -51,7 +51,7 @@ class SolutionSimple:
 def check(expected, *args):
     classes = [SolutionSimple, SolutionOn]
     for Solution in classes:
-        print(Solution.__name__, expect)
+        print(Solution.__name__, expected)
         solution = Solution().sortedSquares(*args)
         print(solution, solution == expected)
 
