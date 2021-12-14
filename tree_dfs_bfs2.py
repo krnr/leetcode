@@ -11,7 +11,6 @@
 DFS: 1 2 3 4 5 6 7 8 9 10 11 (post order)
 BFS: 11 8 10 6 7 9 3 5 1 2 4 (level order)
 """
-import typing as t
 from collections import deque, namedtuple
 
 # Node = namedtuple("Node", "value left right")
@@ -62,7 +61,7 @@ def bfs(stack: deque):
             yield current.value
             stack.extend([current.left, current.right])
         yield from bfs(stack)
-        
+
 
 def spotter(value):
     print(f"I've spotted: {value}")

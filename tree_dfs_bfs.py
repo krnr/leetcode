@@ -48,12 +48,12 @@ def bfs(to_visit: deque):
             yield current.value
             to_visit.extend([current.left, current.right])
         yield from bfs(to_visit)
-        
-        
+
+
 if __name__ == "__main__":
-    print("dfs: ") 
+    print("dfs: ")
     result = [val for val in dfs(tree)]
     print(result)
-    print("bfs: ") 
+    print("bfs: ")
     result = [val for val in bfs(deque([tree]))]
     print(result)
