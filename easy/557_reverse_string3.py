@@ -11,7 +11,6 @@ Example 2:
 
 Input: s = "God Ding"
 Output: "doG gniD"
- 
 
 Constraints:
 

@@ -54,7 +54,9 @@ class SolutionB:
         for idx, char in enumerate(s):
             if char in used_chars:
                 previous_position = used_chars[char]
+                # was char seen in the current sequence?
                 if start <= previous_position:
+                    # ...now we must start next sequence
                     start = previous_position + 1
             else:
                 longest = max(longest, idx - start + 1)
