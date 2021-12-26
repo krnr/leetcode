@@ -24,22 +24,34 @@ Explanation: There are three 132 patterns in the sequence: [-1, 3, 2], [-1, 3, 0
 
 from collections import deque
 
-class Solution:
-  def find132pattern(self, nums) -> bool:
-    length = len(nums)
-    if length < 3:
-      return False
-        
-    stack_ = deque()
-    last_min = float("-inf")
-    for i in range(1, length+1):
-      current = nums[-i]
-      if current < last_min:
-        return True
-      while stack_ and stack_[-1] < current:
-        last_min = stack_.pop()
-      stack_.append(current)
-    return False
 
-nums =  [3, 5, 0, 3, 4]
-Solution().find132pattern(nums)
+class SolutionA:
+    def find132pattern(self, nums) -> bool:
+        length = len(nums)
+        if length < 3:
+            return False
+
+        stack_ = deque()
+        last_min = float("-inf")
+        for i in range(1, length + 1):
+            current = nums[-i]
+            if current < last_min:
+                return True
+            while stack_ and stack_[-1] < current:
+                last_min = stack_.pop()
+            stack_.append(current)
+        return False
+
+
+def check(expected, n):
+    classes = [SolutionA]
+    for Solution in classes:
+        print(Solution.__name__, expected)
+        result = Solution().find132pattern(n)
+        print(result, result == expected)
+
+
+if __name__ == "__main__":
+    nums = [3, 5, 0, 3, 4]
+    expect = True
+    check(expect, nums)
